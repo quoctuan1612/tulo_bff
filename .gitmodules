@@ -1,0 +1,3 @@
+[submodule "tulo_grpc"]
+	path = tulo_grpc
+	url = https://github.com/quoctuan1612/tulo_grpc.git
