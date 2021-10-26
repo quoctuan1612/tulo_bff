@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/quoctuan1612/tulo_common_plugin.git
-  revision: d5b133844f3bbfb7928e80f05e3ebde6d47e2a83
+  revision: 3c1cc59fc417190b7f1492603526115f5f163671
   branch: master
   specs:
     tulo_common (0.1.0)
