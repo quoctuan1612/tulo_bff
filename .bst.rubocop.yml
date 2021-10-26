@@ -1,0 +1,151 @@
+# This is the default configuration file. Enabling and disabling is configured
+# in separate files. This file adds all other parameters apart from Enabled.
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.0
+  Include:
+    - '**/*.rb'
+    - '**/*.gemspec'
+    - '**/*.rake'
+    - '**/config.ru'
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - '**/Guardfile'
+  Exclude:
+    - 'bin/**/*'
+    - 'db/migrate/*'
+    - 'db/*schema.rb'
+    - 'db/seeds.rb'
+    - 'doc/**/*'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'workspace/**/*'
+
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
+Rails:
+  Enabled: true
+
+# The project has a soft limit of 250 chars for line length, but up to 100 chars
+# are allowed in some cases.
+Layout/LineLength:
+  Max: 250
+  AllowHeredoc: true
+  AllowURI: true
+  IgnoredPatterns:
+    - '\A\s*?#'
+
+# Methods should be short. But sometimes it is not possible.
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Metrics/PerceivedComplexity:
+  Max: 20
+
+Metrics/BlockLength:
+  Enabled: false
+
+# Allow curly braces for blocks that return
+Style/BlockDelimiters:
+  Exclude:
+    - Gemfile
+  EnforcedStyle: semantic
+  FunctionalMethods:
+    - before
+    - let
+    - let!
+    - subject
+    - watch
+    - expect
+    - sequence
+    - where
+
+# Do not enforce documentation for all class definitions
+Style/Documentation:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+# Checks that message expectations are set using spies. receive/have_received
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+# Array of symbols is more legible than %i()
+Style/SymbolArray:
+  Enabled: false
+
+# Set max depth to 6
+RSpec/NestedGroups:
+  Max: 6
+
+# Set max length to 50 for json keys matcher
+RSpec/ExampleLength:
+  Max: 50
+
+# Allow 5 expects in examples
+RSpec/MultipleExpectations:
+  Max: 5
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - config.ru
+    - Rakefile
+    - Gemfile
+
+# Allow multiline block chain
+Style/MultilineBlockChain:
+  Enabled: false
+
+# Allow Non ascii(Japanese) comment
+Style/AsciiComments:
+  Enabled: false
+
+# RSpec Describe Class
+RSpec/DescribeClass:
+  Enabled: false
+
+# Ignore controller module nest
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/ModuleLength:
+  Max: 200
+
+RSpec/NamedSubject:
+  Enabled: false
+
+Rails/DynamicFindBy:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - test
+    - development
+
+RSpec/ExpectInHook:
+  Enabled: false

@@ -1,0 +1,7 @@
+vi:
+  errors:
+    messages:
+      user:
+        invalid_password: Mật khẩu của bạn chưa chính xác. Vui lòng thử lại.
+      role:
+        blank: "Không thể để trắng"
