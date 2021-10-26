@@ -1,0 +1,6 @@
+env:
+  name: <%= ENV['ENV_NAME'] %>
+
+encrypted_password:
+  pepper: "0c926a9f54004241775fbec5df837607f04a06f096c76a24efe37a70992cbfbf"
+  stretches: 12

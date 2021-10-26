@@ -1,0 +1,45 @@
+inherit_from: .bst.rubocop.yml
+
+RSpec/ContextWording:
+  Enabled: false
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - '**/*_pb.rb'
+    - 'bin/**/*'
+    - 'db/migrate/*'
+    - 'db/*schema.rb'
+    - 'db/seeds.rb'
+    - 'doc/**/*'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'workspace/**/*'
+    - 'spec/factories/*'
+
+Lint/MissingSuper:
+  Exclude:
+    - 'app/services/**/*'
+
+Naming/PredicateName:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 300
+
+RSpec/ExpectInHook:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 15
+
+Metrics/MethodLength:
+  Max: 50
+
+Metrics/AbcSize:
+  Max: 100
+
+Naming/AccessorMethodName:
+  Enabled: false
